@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaxAl · Game Developer Portfolio</title>
+<meta name="description" content="Portfolio of MaxAl: game jam winner, Celeste modder and engineer working in Godot, Unity and C#.">
+<style>
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --text: #1c1b22; --muted: #5d5b68;
+    --line: #e4e1d8; --accent: #5b3fd1; --accent-soft: #ece8fb; --good: #1b7f4b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14131a; --surface: #1d1c26; --text: #efedf5; --muted: #a9a6b8;
+      --line: #2e2c3b; --accent: #a79bff; --accent-soft: #2a2545; --good: #62d394;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  header.top {
+    position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; gap: 20px; align-items: center; justify-content: space-between; height: 52px; }
+  header.top strong { font-size: 15px; }
+  nav { display: flex; gap: 16px; font-size: 14px; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+  .hero { padding: 64px 0 40px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .hero p.lead { font-size: 19px; color: var(--muted); max-width: 640px; margin: 0 0 24px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--text); text-decoration: none; font-size: 15px;
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #14131a; } }
+  .stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .stats div b { display: block; font-size: 24px; }
+  .stats div span { font-size: 13px; color: var(--muted); }
+  section { padding: 36px 0; }
+  h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px; margin-bottom: 18px;
+  }
+  .card h3 { margin: 0 0 4px; font-size: 22px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+  .tag { font-size: 12px; padding: 2px 9px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); }
+  .tag.status { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+  .tag.win { background: transparent; border: 1px solid var(--good); color: var(--good); }
+  .card p { margin: 8px 0; }
+  .card dl { margin: 12px 0 0; display: grid; grid-template-columns: 110px 1fr; gap: 6px 14px; font-size: 15px; }
+  .card dt { color: var(--muted); }
+  .card dd { margin: 0; }
+  .links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 14px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .grid .card { margin: 0; padding: 16px; }
+  .grid .card h3 { font-size: 17px; }
+  .grid .card p { font-size: 14.5px; color: var(--muted); }
+  .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .row small { color: var(--muted); }
+  ul { padding-left: 20px; margin: 8px 0 0; }
+  li { margin: 4px 0; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 560px) { nav { display: none; } .card dl { grid-template-columns: 1fr; gap: 0; } .card dt { margin-top: 8px; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <strong>MaxAl</strong>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#more">More games</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>I build games and the systems behind them.</h1>
+    <p class="lead">
+      Game programmer and industrial-engineering student from Santiago, Chile. I make 2D games in Godot and Unity,
+      write mods in C#, and automate data pipelines for a living. I work in English (IELTS) and German (Abitur); Spanish is my native language.
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#work">See my work</a>
+      <a class="btn" href="https://chili-gamez.itch.io/">Play on itch.io</a>
+      <a class="btn" href="https://github.com/MaxAl100">GitHub</a>
+    </div>
+    <div class="stats">
+      <div><b>1st</b><span>Retrograde Jam 4, overall</span></div>
+      <div><b>3rd</b><span>IGDA Foundation Game Jam 2022</span></div>
+      <div><b>13</b><span>mods published on GameBanana</span></div>
+      <div><b>10+</b><span>times as a teacher assistant at UC</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <h2>Selected work</h2>
+
+    <!-- 1. PERSES PROTOCOL -->
+    <article class="card">
+      <h3>Perses Protocol</h3>
+      <div>Retro turn-based tactics game, built with a team of four</div>
+      <div class="meta">
+        <span class="tag win">#1 overall · Retrograde Jam 4</span>
+        <span class="tag">Team of 4</span>
+        <span class="tag">Unity</span>
+        <span class="tag">2D</span>
+        <span class="tag">Sci-fi horror</span>
+        <span class="tag">Browser (HTML5)</span>
+      </div>
+      <p>
+        A tactical strategy game styled after 1994-era SNES titles, where you command units through turn-based encounters.
+        Of the entries rated in the jam it placed first overall, first in Graphical Presentation and in Fun, second in Sound Design
+        and third in Era "Feel" (scores from 11 ratings, adjusted by the jam's median rating).
+      </p>
+      <dl>
+        <dt>My role</dt>
+        <dd>Focus on the AI implementation of enemies, balancing and testing for any issues or unbalanced encounters. Helped build levels, but was not the main contributor.</dd>
+        <dt>Challenge</dt>
+        <dd>Achieve a working AI that makes reasonably good decisions, managed to learn the AI system of Unity that the team chose adjusted parameters to achieve the desired behavior.</dd>
+        <dt>Team</dt>
+        <dd>MrScientist, Chili Gamez, Blood_Jackal23, dreyest</dd>
+      </dl>
+      <div class="links">
+        <a href="https://mrscientist.itch.io/persesprotocol">Play in browser</a>
+        <a href="https://itch.io/jam/retrogradejam-4/rate/2123723">Jam page &amp; results</a>
+      </div>
+    </article>
+
+    <!-- 2. CELESTE MODDING -->
+    <article class="card">
+      <h3>Celeste modding: MaxAl Helper</h3>
+      <div>C# helper library and 13 published mods for the Everest mod loader</div>
+      <div class="meta">
+        <span class="tag">C#</span>
+        <span class="tag">Everest</span>
+        <span class="tag">Lönn plugins</span>
+        <span class="tag">Open source</span>
+      </div>
+      <p>
+        MaxAl Helper is my open-source code mod for Celeste, built on the Everest mod loader. It includes Lönn editor entities
+        and custom particle graphics so level makers can use its content directly in their maps. Alongside it I publish my own mods on GameBanana, 
+        where I have built levels around specific ideas and managed teams of mappers to achieve larger projects that any of them could have achieved on their own.
+      </p>
+      <dl>
+        <dt>What it shows</dt>
+        <dd>Extending an existing game through its modding framework in C#, and shipping content other players download.</dd>
+        <dt>Scale</dt>
+        <dd>39 commits in the repository; 13 mods published on GameBanana.</dd>
+      </dl>
+      <div class="links">
+        <a href="https://github.com/MaxAl100/MaxAlHelper">Source on GitHub</a>
+        <a href="https://gamebanana.com/members/3802081">Mods on GameBanana</a>
+      </div>
+    </article>
+
+    <!-- 3. PAINT PLATFORMER -->
+    <article class="card">
+      <h3>Paint Platformer</h3>
+      <div>Original 2D platformer with a color-based ability system</div>
+      <div class="meta">
+        <span class="tag status">In development</span>
+        <span class="tag">Godot 4</span>
+        <span class="tag">GDScript</span>
+      </div>
+      <p>
+        An original 2D platformer built around a color-based ability system, where color determines what the character can do.
+        Currently in development.
+      </p>
+      <dl>
+        <dt>Focus</dt>
+        <dd>Color-based ability system and platforming feel, with interactive depth between abilities and  simple controls. Working mini-map and improved throughout a player-testing period. </dd>
+      </dl>
+      <div class="links">
+        <!-- TODO: add itch.io more finished build once published. -->
+        <span style="color:var(--muted)">Playable build coming soon</span>
+      </div>
+    </article>
+  </section>
+
+  <section id="more">
+    <h2>More games &amp; experiments</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Bare-Bones Apothecary</h3>
+        <p>A potion puzzler in Unity where a resurrected skeleton brews potions from vague recipes and robs graves on the side. Made by a large team for the IGDA Foundation Game Jam 2022. I designed how the recipe data is structured, so good and bad recipes were easy to add, and helped with the game logic that records which ingredients go in and in what order.</p>
+        <div class="links"><a href="https://lastinlineforusernames.itch.io/bare-bones-apothecary">Download (Android)</a></div>
+      </article>
+      <article class="card">
+        <h3>Shadow Survivors</h3>
+        <p>A survivors-like built in Godot for Pirate Software Game Jam 15, with attacks you combine from elements. Our first Godot project, made with MrScientist.</p>
+        <div class="links"><a href="https://chili-gamez.itch.io/shadow-survivors">Play</a></div>
+      </article>
+      <article class="card">
+        <h3>Out of a Nightmare</h3>
+        <p>A puzzle game where shifting colors rewrite the rules as you move through emotional stages.</p>
+        <div class="links"><a href="https://chili-gamez.itch.io/out-of-a-nightmare">Play</a></div>
+      </article>
+      <article class="card">
+        <h3>Population's Reign</h3>
+        <p>Tower defense where every tower needs people to operate it, requiring a balance of additional resources.</p>
+        <div class="links"><a href="https://chili-gamez.itch.io/populations-reign">Play</a></div>
+      </article>
+      <article class="card">
+        <h3>Briel</h3>
+        <p>Fight hordes of figures by connecting to towers, bringing a unique twist to infinite waves defense.</p>
+        <div class="links"><a href="https://chili-gamez.itch.io/briel">Play</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <article class="card">
+      <div class="row"><h3>Engineering Intern · ZeroFox</h3><small>Jan – Mar 2026 · Santiago (hybrid)</small></div>
+      <ul>
+        <li>Automated analysis over large datasets in Snowflake and SQL, merging data from multiple databases.</li>
+        <li>Built Grafana dashboards and Slack alerts for pipeline failures; worked in a Scrum team using Jira.</li>
+        <li>Rated Destacado (top tier) by both the university and the company.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="row"><h3>Teaching Assistant &amp; Coordinator · PUC Chile</h3><small>2022 – present</small></div>
+      <ul>
+        <li>Teaching assistant for multiple courses: I was a teaching assistant for over four courses throughout my tenure, mainly for Advanced Programming.</li>
+        <li>General Coordinator for Advanced Programming: Through many different roles, lead up to 38 assistants, 400+ students, weekly planning and Google Cloud grading bots.</li>
+        <li>Built automated testing and grading pipelines for the Testing course on GitHub Classroom.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="row"><h3>Education &amp; recognition</h3></div>
+      <ul>
+        <li>Industrial Engineering with a Diploma in Computer Science, Pontificia Universidad Católica de Chile (2021 – 2026).</li>
+        <li>IGDA Foundation Game Jam, 3rd place (2022) · IGDA Foundation Scholar (2022).</li>
+      </ul>
+    </article>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p><strong style="color:var(--text)">Let's talk.</strong> I'm finishing my degree and available to start full time from late January 2027.</p>
+    <p>
+      <a href="mailto:aheldh@gmail.com">aheldh@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/alejandro-max-held-hasson-781a2b163">LinkedIn</a> ·
+      <a href="https://github.com/MaxAl100">GitHub</a> ·
+      <a href="https://chili-gamez.itch.io/">itch.io</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
